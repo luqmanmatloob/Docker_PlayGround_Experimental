@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.static('public'));
 
 
-const jokes = [
+const jokes: any = [
 
   "Why don't scientists trust atoms? Because they make up everything!",
   "Did you hear about the mathematician who’s afraid of negative numbers? He’ll stop at nothing to avoid them!",
@@ -31,12 +31,12 @@ const jokes = [
   "Why don't eggs tell jokes? Because they might crack up!"
 ];
 
-app.get("/jokes", (req, res) => {
+app.get("/jokes", (req:any, res:any) => {
   const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
   res.json({ joke: randomJoke });
 });
 
-app.get("/test", (req, res) => {
+app.get("/test", (req:any, res:any) => {
   console.log("hello");
   res.send("Test endpoint reached!");
 });
